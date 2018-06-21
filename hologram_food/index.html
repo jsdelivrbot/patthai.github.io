@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<script src="js/aframe.min.js"></script>
+<!-- include aframe-ar.js -->
+<script src="js/aframe-ar.js"></script>
+
+<body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1;'>
+
+
+
+</div>
+	<a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled:false;'>
+		<!-- handle unknown marker -->
+		<!-- <a-marker type='unknown'>
+			<a-box depth="1" height="1" width="1" position='0 0.5 0' material='opacity: 0.5; side:double; color:blue;'></a-box>
+		</a-marker> -->
+
+		<!-- handle hiro marker -->
+		
+		<a-assets>
+    		<a-asset-item id="duck" src="https://cdn.aframe.io/test-models/models/brainstem/BrainStem.gltf"></a-asset-item>
+  		</a-assets>
+
+  		</a-assets>
+  
+  
+		<a-marker preset='hiro'>
+		
+			
+			<a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:blue;'>
+				<a-entity position='0 0.5 0' material='opacity: 0.5; side: double;color:blue;' gltf-model="#duck"></a-entity>
+			</a-box>
+		</a-marker>
+		
+		
+		<!-- add a simple camera -->
+		<a-entity camera></a-entity>
+	</a-scene>
+</body>
+
+<script>
+var randNum = Math.floor(Math.random() * (25)) + 1;
+        console.log(randNum);
+</script>
+</html>
